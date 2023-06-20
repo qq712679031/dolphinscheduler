@@ -47,7 +47,9 @@ public class ImpalaDataSourceProcessorTest {
     @Test
     public void testCreateConnectionParams() {
         Map<String, String> props = new HashMap<>();
-        props.put("serverTimezone", "utc");
+        props.put("AuthMech", "0");
+        props.put("UID", "admin");
+        props.put("PWD", "admin");
         ImpalaDataSourceParamDTO impalaDatasourceParamDTO = new ImpalaDataSourceParamDTO();
         impalaDatasourceParamDTO.setUserName("admin");
         impalaDatasourceParamDTO.setPassword("admin");
@@ -84,8 +86,9 @@ public class ImpalaDataSourceProcessorTest {
     public void testGetJdbcUrl() {
         ImpalaConnectionParam impalaConnectionParam = new ImpalaConnectionParam();
         impalaConnectionParam.setJdbcUrl("jdbc:impala://localhost:21050/default");
+        impalaConnectionParam.setOther("AuthMech=0;UID=admin;PWD=admin;");
         Assert.assertEquals(
-                "jdbc:impala://localhost:21050/default?allowLoadLocalInfile=false&autoDeserialize=false&allowLocalInfile=false&allowUrlInLocalInfile=false",
+                "jdbc:impala://localhost:21050/default;AuthMech=0",
                 ImpalaDatasourceProcessor.getJdbcUrl(impalaConnectionParam));
     }
 

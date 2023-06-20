@@ -39,8 +39,8 @@ public enum DbType {
     PRESTO(8, "presto"),
     H2(9, "h2"),
     REDSHIFT(10, "redshift"),
-    ATHENA(11, "athena"),
-    IMPALA(12, "impala"),
+    IMPALA(11, "impala"),
+    ATHENA(12, "athena"),
     ;
 
     @EnumValue

@@ -26,8 +26,8 @@ type IDataBase =
   | 'DB2'
   | 'PRESTO'
   | 'REDSHIFT'
-  | 'ATHENA'
   | 'IMPALA'
+  | 'ATHENA'
 
 interface IDataSource {
   id?: number

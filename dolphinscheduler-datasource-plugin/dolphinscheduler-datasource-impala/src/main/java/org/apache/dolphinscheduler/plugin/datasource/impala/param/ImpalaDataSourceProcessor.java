@@ -111,7 +111,7 @@ public class ImpalaDataSourceProcessor extends AbstractDataSourceProcessor {
         ImpalaConnectionParam impalaConnectionParam = (ImpalaConnectionParam) connectionParam;
         String jdbcUrl = impalaConnectionParam.getJdbcUrl();
         if (!StringUtils.isEmpty(impalaConnectionParam.getOther())) {
-            return String.format("%s;%s&%s", jdbcUrl, impalaConnectionParam.getOther(), APPEND_PARAMS);
+            return String.format("%s;%s", jdbcUrl, impalaConnectionParam.getOther());
         }
         return String.format("%s;%s", jdbcUrl, APPEND_PARAMS);
     }
@@ -137,7 +137,7 @@ public class ImpalaDataSourceProcessor extends AbstractDataSourceProcessor {
             return null;
         }
         StringBuilder stringBuilder = new StringBuilder();
-        paramMap.forEach((key, value) -> stringBuilder.append(String.format("%s;%s;", key, value)));
+        paramMap.forEach((key, value) -> stringBuilder.append(String.format("%s=%s;", key, value)));
         return stringBuilder.toString();
     }
 
