@@ -15,7 +15,8 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.apache.dolphinscheduler</groupId>
@@ -94,6 +95,9 @@
         <janino.version>3.0.16</janino.version>
         <snakeyaml.version>1.31</snakeyaml.version>
         <htrace.version>4.1.1</htrace.version>
+        <com.cloudera.impala>2.6.27</com.cloudera.impala>
+        <curator.version>4.3.0</curator.version>
+        <zookeeper.version>3.4.10</zookeeper.version>
     </properties>
 
     <dependencyManagement>
@@ -372,7 +376,6 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector.version}</version>
-                <scope>test</scope>
             </dependency>
 
             <dependency>
@@ -380,6 +383,12 @@
                 <artifactId>ojdbc8</artifactId>
                 <version>${oracle-jdbc.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cloudera.impala.jdbc</groupId>
+                <artifactId>ImpalaJDBC41</artifactId>
+                <version>${com.cloudera.impala}</version>
             </dependency>
 
             <dependency>
@@ -769,28 +778,28 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <profiles>
-        <profile>
-            <id>zk-3.8</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <zookeeper.version>3.8.0</zookeeper.version>
-                <curator.version>5.3.0</curator.version>
-            </properties>
-        </profile>
-        <profile>
-            <id>zk-3.4</id>
-            <activation>
-                <property>
-                    <name>zk-3.4</name>
-                </property>
-            </activation>
-            <properties>
-                <curator.version>4.3.0</curator.version>
-                <zookeeper.version>3.4.14</zookeeper.version>
-            </properties>
-        </profile>
-    </profiles>
+    <!--    <profiles>-->
+    <!--        <profile>-->
+    <!--            <id>zk-3.4</id>-->
+    <!--            <activation>-->
+    <!--                <property>-->
+    <!--                    <name>zk-3.4</name>-->
+    <!--                </property>-->
+    <!--            </activation>-->
+    <!--            <properties>-->
+    <!--                <curator.version>4.3.0</curator.version>-->
+    <!--                <zookeeper.version>3.4.14</zookeeper.version>-->
+    <!--            </properties>-->
+    <!--        </profile>-->
+    <!--        <profile>-->
+    <!--            <id>zk-3.8</id>-->
+    <!--            <activation>-->
+    <!--                <activeByDefault>true</activeByDefault>-->
+    <!--            </activation>-->
+    <!--            <properties>-->
+    <!--                <zookeeper.version>3.8.0</zookeeper.version>-->
+    <!--                <curator.version>5.3.0</curator.version>-->
+    <!--            </properties>-->
+    <!--        </profile>-->
+    <!--    </profiles>-->
 </project>

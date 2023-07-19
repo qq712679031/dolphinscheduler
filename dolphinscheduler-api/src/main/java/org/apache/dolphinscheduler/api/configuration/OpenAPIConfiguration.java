@@ -39,21 +39,25 @@ import org.springframework.util.ReflectionUtils;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping;
 
+import javax.jdo.annotations.Value;
+
 /**
- *
  * swager2 config class
- *
  */
 @Configuration
 @ConditionalOnWebApplication
 @PropertySource("classpath:swagger.properties")
 public class OpenAPIConfiguration implements WebMvcConfigurer {
 
+    @Value(column = "${springfox.documentation.swagger.v2.path}")
+    private boolean swaggerEnable;
+
     @Bean
     public Docket createV1RestApi() {
         return new Docket(DocumentationType.OAS_30)
                 .groupName("v1(current)")
                 .apiInfo(apiV1Info())
+                .enable(swaggerEnable)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("org.apache.dolphinscheduler.api.controller"))
                 .paths(PathSelectors.any().and(PathSelectors.ant("/v2/**").negate()))
@@ -73,6 +77,7 @@ public class OpenAPIConfiguration implements WebMvcConfigurer {
         return new Docket(DocumentationType.OAS_30)
                 .groupName("v2")
                 .apiInfo(apiV2Info())
+                .enable(swaggerEnable)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("org.apache.dolphinscheduler.api.controller"))
                 .paths(PathSelectors.any().and(PathSelectors.ant("/v2/**")))
