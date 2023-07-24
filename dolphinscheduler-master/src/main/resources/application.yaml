@@ -127,11 +127,11 @@ management:
         include: '*'
   endpoint:
     health:
-      enabled: true
+      enabled: false
       show-details: always
   health:
     db:
-      enabled: true
+      enabled: false
     defaults:
       enabled: false
   metrics:
@@ -139,7 +139,7 @@ management:
       application: ${spring.application.name}
 
 metrics:
-  enabled: true
+  enabled: false
 
 # Override by profile
 
