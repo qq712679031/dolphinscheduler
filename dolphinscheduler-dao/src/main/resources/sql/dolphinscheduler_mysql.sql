@@ -874,6 +874,9 @@ CREATE TABLE `t_ds_task_instance` (
   KEY `idx_code_version` (`task_code`, `task_definition_version`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+
+ALTER TABLE `t_ds_task_instance` ADD INDEX `idx_state_endtime` (`state`, `end_time`);
+
 -- ----------------------------
 -- Records of t_ds_task_instance
 -- ----------------------------
@@ -1984,3 +1987,4 @@ CREATE TABLE `t_ds_fav_task`
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1
   DEFAULT CHARSET = utf8;
+
