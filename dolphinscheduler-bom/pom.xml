@@ -53,7 +53,7 @@
         <protostuff.version>1.7.2</protostuff.version>
         <byte-buddy.version>1.9.16</byte-buddy.version>
         <logback.version>1.2.11</logback.version>
-        <hadoop.version>3.2.4</hadoop.version>
+        <hadoop.version>3.3.2</hadoop.version>
         <cron-utils.version>9.1.6</cron-utils.version>
         <h2.version>2.2.220</h2.version>
         <mysql-connector.version>8.0.16</mysql-connector.version>
@@ -389,6 +389,19 @@
                 <groupId>com.cloudera.impala.jdbc</groupId>
                 <artifactId>ImpalaJDBC41</artifactId>
                 <version>${com.cloudera.impala}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>io.transwarp</groupId>
+                <artifactId>inceptor-jdbc</artifactId>
+                <version>8.31.1</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <dependency>

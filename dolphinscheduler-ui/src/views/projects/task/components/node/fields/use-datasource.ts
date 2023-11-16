@@ -96,6 +96,11 @@ export function useDatasource(
       id: 11,
       code: 'ATHENA',
       disabled: false
+    },
+    {
+      id: 12,
+      code: 'ARGODB',
+      disabled: false
     }
   ]
 

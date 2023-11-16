@@ -42,6 +42,7 @@
         <module>dolphinscheduler-datasource-redshift</module>
         <module>dolphinscheduler-datasource-athena</module>
         <module>dolphinscheduler-datasource-impala</module>
+        <module>dolphinscheduler-datasource-argodb</module>
     </modules>
 
     <dependencyManagement>

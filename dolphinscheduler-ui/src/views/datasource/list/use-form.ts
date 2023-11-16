@@ -245,6 +245,11 @@ export const datasourceType: IDataBaseOptionKeys = {
     value: 'IMPALA',
     label: 'IMPALA',
     defaultPort: 21050
+  },
+  ARGODB: {
+    value: 'ARGODB',
+    label: 'ARGODB',
+    defaultPort: 10000
   }
 }
 

@@ -29,7 +29,9 @@ import com.google.common.base.Functions;
 public enum DbType {
 
     MYSQL(0, "mysql"),
+
     POSTGRESQL(1, "postgresql"),
+
     HIVE(2, "hive"),
     SPARK(3, "spark"),
     CLICKHOUSE(4, "clickhouse"),
@@ -41,6 +43,7 @@ public enum DbType {
     REDSHIFT(10, "redshift"),
     IMPALA(11, "impala"),
     ATHENA(12, "athena"),
+    ARGODB(13, "argodb"),
     ;
 
     @EnumValue

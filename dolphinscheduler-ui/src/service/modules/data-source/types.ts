@@ -28,6 +28,7 @@ type IDataBase =
   | 'REDSHIFT'
   | 'IMPALA'
   | 'ATHENA'
+  | 'ARGODB'
 
 interface IDataSource {
   id?: number

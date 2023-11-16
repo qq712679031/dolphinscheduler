@@ -87,5 +87,10 @@
             <artifactId>dolphinscheduler-datasource-impala</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.dolphinscheduler</groupId>
+            <artifactId>dolphinscheduler-datasource-argodb</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>

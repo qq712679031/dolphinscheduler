@@ -26,3 +26,13 @@ spring:
       config:
         sources:
           - name: ${spring.application.name}
+#加密对应的解密bean
+jasypt:
+  encryptor:
+    bean: sM4ECBStringEncryptor
+
+encrypt:
+  #是否开启加密
+  passwordEncrypt: false
+  #加密所对应的秘钥文件所在地址
+  encryptKey: /data/.zgKey

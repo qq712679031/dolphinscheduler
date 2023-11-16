@@ -36,6 +36,7 @@ public class DataSourceConstants {
     public static final String COM_REDSHIFT_JDBC_DRIVER = "com.amazon.redshift.jdbc42.Driver";
     public static final String COM_ATHENA_JDBC_DRIVER = "com.simba.athena.jdbc.Driver";
     public static final String COM_IMPALA_JDBC_DRIVER = "com.cloudera.impala.jdbc41.Driver";
+    public static final String COM_ARGODB_JDBC_DRIVER = "io.transwarp.jdbc.InceptorDriver";
 
     /**
      * validation Query
@@ -51,6 +52,7 @@ public class DataSourceConstants {
     public static final String REDHIFT_VALIDATION_QUERY = "select 1";
     public static final String ATHENA_VALIDATION_QUERY = "select 1";
     public static final String IMPALA_VALIDATION_QUERY = "select now()";
+    public static final String ARGODB_VALIDATION_QUERY = "select 1";
 
     /**
      * jdbc url
@@ -67,11 +69,13 @@ public class DataSourceConstants {
     public static final String JDBC_REDSHIFT = "jdbc:redshift://";
     public static final String JDBC_ATHENA = "jdbc:awsathena://";
     public static final String JDBC_IMPALA = "jdbc:impala://";
+    public static final String JDBC_ARGODB = "jdbc:transwarp2://";
 
     /**
      * database type
      */
     public static final String MYSQL = "MYSQL";
+
     public static final String HIVE = "HIVE";
 
     /**
