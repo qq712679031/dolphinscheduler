@@ -30,7 +30,7 @@
     <properties>
         <netty.version>4.1.53.Final</netty.version>
         <spring-boot.version>2.7.14</spring-boot.version>
-        <spring.version>5.3.19</spring.version>
+        <spring.version>5.3.26</spring.version>
         <java-websocket.version>1.5.1</java-websocket.version>
         <mybatis-plus.version>3.5.2</mybatis-plus.version>
         <quartz.version>2.3.2</quartz.version>

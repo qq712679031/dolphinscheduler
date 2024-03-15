@@ -27,6 +27,7 @@ public enum WorkflowExecutionStatus {
     // This class is split from <code>ExecutionStatus</code> #11339.
     // In order to compatible with the old value, the code is not consecutive
     SUBMITTED_SUCCESS(0, "submit success"),
+
     RUNNING_EXECUTION(1, "running"),
     READY_PAUSE(2, "ready pause"),
     PAUSE(3, "pause"),
