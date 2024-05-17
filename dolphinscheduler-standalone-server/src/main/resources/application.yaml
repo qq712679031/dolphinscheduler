@@ -271,3 +271,16 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/dolphinscheduler?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: root
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: oceanbase
+  sql:
+    init:
+      schema-locations: classpath:sql/dolphinscheduler_oceanbase.sql
+  datasource:
+    driver-class-name:  com.oceanbase.jdbc.Driver
+    url: jdbc:oceanbase://realtime-1:2881/dolphinscheduler

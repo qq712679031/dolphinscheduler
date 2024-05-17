@@ -197,3 +197,16 @@ spring:
   quartz:
     properties:
       org.quartz.jobStore.driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: oceanbase
+  datasource:
+    driver-class-name:  com.oceanbase.jdbc.Driver
+    url: jdbc:oceanbase://realtime-1:2881/dolphinscheduler
+  quartz:
+    properties:
+      org.quartz.jobStore.driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate

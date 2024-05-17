@@ -16,7 +16,7 @@ registry:
       base-sleep-time: 60ms
       max-sleep: 300ms
       max-retries: 5
-    session-timeout: 30s
+    session-timeout: 60s
     connection-timeout: 9s
     block-until-connected: 600ms
     # The following options are set according to personal needs    
